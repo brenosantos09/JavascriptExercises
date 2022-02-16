@@ -11,14 +11,13 @@
 
     <form action="">
         <input type="text" id="F"  onchange="converterF()">
-        
     </form>
     <span id="resposta"></span>
 
     <script>
         function converterF(){
             var f = parseFloat(document.getElementById("F").value);
-            var res = f - 32 * (5 / 9);
+            var res = (f - 32) * (5 / 9);
             document.getElementById("resposta").innerHTML = res;
         }
 

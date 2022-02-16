@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Acrescente as seguintes mensagens à solução do exercício anterior conforme o caso.
+        - Caso o número de lados seja inferior a 3 escrever NÃO É UM POLÍGONO.
+        - Caso o número de lados seja superior a 5 escrever POLÍGONO NÃO IDENTIFICADO.
+        Observação: Considere que o usuário poderá informar qualquer valor para o número de lados.</h3>
+
+        <form action="">
+            <input type="text" id="valor1" placeholder="número de lados">
+            <input type="text" id="valor2" placeholder="medida do lado em centímetros">
+            <button type="button" onclick="mainController()">Calcular</button>
+        </form>
+        <span id="res"></span>
+
+        <script>
+
+            function mainController(){
+            
+            var N1 = parseInt(document.getElementById("valor1").value);
+            var N2 = parseFloat(document.getElementById("valor2").value);
+
+            document.getElementById("res").innerHTML = calcularPoligono(N1, N2);
+       }
+
+       function calcularPoligono(a, b){
+           if(a < 3){
+               return "Não é um polígono";
+           }
+           if(a > 5){
+               return "Polígono não identificado";
+           }
+           
+           if(a == 3){
+              var p = b + b + b;
+              return "triangulo com perímetro de " + p;
+           }
+
+           if(a == 4){
+              var a = b * b;
+              return "quadrado com área de " + a;
+           }
+
+           if(a == 5){
+              var p = b + b + b
+              return "pentágono";
+           }
+       }
+
+        </script>
+</body>
+</html>

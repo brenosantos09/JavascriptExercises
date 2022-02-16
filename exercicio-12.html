@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h3>Escreva um programa para ler 3 valores inteiros (considere que não serão lidos valores iguais) e escrevê-los em ordem crescente.</h3>
+
+    <form action="">
+        <input type="text" id="valor1" placeholder="valor 1">
+        <input type="text" id="valor2" placeholder="valor 2">
+        <input type="text" id="valor3" placeholder="valor 3">
+
+        <button type="button" onclick="mainController()">Checar</button>
+    </form>
+    <span id="resposta"></span>
+
+    <script>
+
+        function mainController(){
+            
+            var N1 = parseInt(document.getElementById("valor1").value);
+            var N2 = parseInt(document.getElementById("valor2").value);
+            var N3 = parseInt(document.getElementById("valor3").value);
+
+            document.getElementById("resposta").innerHTML = ordenar(N1, N2, N3);
+       }
+
+       function ordenar(a = 40, b = 20, c = 3){
+            var temp = 0;
+            if(a > b){
+              temp = a; //temp recebe 'a', logo temp = 40 e 'a' = 40
+              a = b; //'a' é igual a 40, mas 'a'= b, logo 'a' é igual a 20 e b é igual a 20
+              b = temp; // 'b' é igual a 20, 'b' recebe temp q é 40, logo 'b' vale 40
+
+            }
+ 
+            if(a > c){     //a = 20 e C vale 3
+                temp = c; // temp = 40, ele recebe C q vale 3, logo temp = 3 e c = 3
+                c = a;      //c recebe a, logo c é 20 e 'a' é 20
+                a = temp;
+            }
+
+            if(b > c){
+                temp = b;
+                a = c;
+                c = temp;
+            }
+
+            return " " + a + "," +b+ "," +c
+       }
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

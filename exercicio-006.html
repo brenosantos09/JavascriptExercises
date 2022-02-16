@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Reescreva o programa do exercício anterior considerando o zero como neutro, ou seja, se for digitado o valor zero, escrever a palavra zero</h3>
+
+
+    <form action="">
+        <input type="text" id="n1">
+        <button type="button" onclick="verificaR()">Ok</button>
+    </form>
+    <span id="resposta"></span>
+
+    <script>
+
+        function verificaR(){
+            var n1 = parseFloat(document.getElementById("n1").value);
+            if(n1 == 0){
+                document.getElementById("resposta").innerHTML = "Zero";
+            }else if(n1 > 0){
+                document.getElementById("resposta").innerHTML = "positivo";
+            }else{
+                document.getElementById("resposta").innerHTML = "negativo";
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

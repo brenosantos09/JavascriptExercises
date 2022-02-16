@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Escreva um programa para ler o número de lados de um polígono regular e a medida do lado (em cm). Calcular e imprimir o seguinte:
+        - Se o número de lados for igual a 3 escrever TRINGULO e o valor do seu perímetro.
+        - Se o número de lados for igual a 4 escrever QUADRADO e o valor da sua área.
+        - Se o número de lados for igual a 5 escrever PENTÁGONO.
+        Observação: Considere que o usuário só informará os valores 3, 4 ou 5.</h3>
+
+        <form action="">
+            <input type="text" id="valor1" placeholder="número de lados">
+            <input type="text" id="valor2" placeholder="medida do lado em centímetros">
+            <button type="button" onclick="mainController()">Calcular</button>
+        </form>
+        <span id="res"></span>
+
+
+        <script>
+
+            function mainController(){
+            
+            var N1 = parseInt(document.getElementById("valor1").value);
+            var N2 = parseFloat(document.getElementById("valor2").value);
+
+            document.getElementById("res").innerHTML = calcularPoligono(N1, N2);
+       }
+
+       function calcularPoligono(a, b){
+           if(a < 3 || a > 5){
+               return "Informe um valor entre 3 e 5";
+           }
+           
+           if(a == 3){
+              var p = b + b + b;
+              return "triangulo com perímetro de " + p;
+           }
+
+           if(a == 4){
+              var a = b * b;
+              return "quadrado com área de " + a;
+           }
+
+           if(a == 5){
+              var p = b + b + b
+              return "pentágono";
+           }
+       }
+
+        </script>
+</body>
+</html>
